@@ -146,3 +146,64 @@ container.insertBefore(newDiv, h1);
 /**
  * This creates a new element
  */
+
+// Events in the DOM
+
+// var button = document.getElementById('button').addEventListener('click', buttnClick);
+
+function buttnClick(e) {
+  console.log('Button Clicked');
+  //gets the target element that was clicked
+  console.log(e.target);
+  // returns the target element's classes in the form of an array
+  console.log(e.target.classList)
+  // the event object has a bunch of properties  that we can use
+  // to check we are holding some other key while clicking
+  console.log(e.altKey);
+
+}
+
+//Different mouse Events
+
+/**
+ * click
+ * dblclick - double click
+ * mousedown 
+ * mouseup 
+ * mouseenter
+ * mouseleave
+ * mouseover - mouse over is also for inner child elements
+ * mouseout
+ * mousemove 
+ */
+
+var button = document.getElementById('button').addEventListener('click', buttnClick);
+
+
+// keyboard and input events
+/**
+ * keydown - everytime any key in the keyboard is pressed this event is fired
+ * keyup
+ * keypress 
+ * focus - when we click inside an input 
+ * blur - 
+ * cut - 
+ * paste - 
+ * input - whatever we do inside an input
+ * onChange - fires when the initial value is changed
+ * submit 
+ */
+
+var itemInput = document.querySelector('input[type="text"]');
+var form = document.querySelector('form');
+
+itemInput.addEventListener('keydown', runEvent)
+
+function runEvent (e) {
+  //prevents the default
+  e.preventDefault();
+  console.log('Event Type' + e.type);
+  // to capture all the typed items in the input
+  console.log(e.target.value);
+
+}
